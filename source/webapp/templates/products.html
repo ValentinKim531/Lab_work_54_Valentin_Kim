@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block menu %}
+
+{% endblock %}
+{% block content %}
+    <ol class="list-group">
+        {% for product in products %}
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+        <img src="{{ product.image }}" width="150" height="150" alt="product photo">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Title: {{ product.name }}</div>
+            <div class="fw-bold">Categories: {{ product.category }}</div>
+            <div class="fw-bold">Price: {{ product.price }} $</div>
+            <span class="badge bg-primary rounded-pill"><a href="{% url 'product_view' product.pk%}" class="button-text-color">see more >>></a></span>
+        </div>
+      </li>
+    </ol>
+    {% endfor %}
+{% endblock %}
+
+
+<!--        <span class="badge bg-primary rounded-pill"><a href="{% url '#' task.pk%}" class="button-text-color">More-->
+<!--            info..</a></span>-->
+<!--          <span class="badge bg-primary rounded-pill"><a href="{% url 'to_do_update' task.pk%}" class="button-text-color">Update</a></span>-->
