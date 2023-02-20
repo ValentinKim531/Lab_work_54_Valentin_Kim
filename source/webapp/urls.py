@@ -11,7 +11,5 @@ urlpatterns = [
     path('products', products_view, name='products'),
     path('products/add', product_add_view, name='product_add'),
     path('categories/add', category_add_view, name='category_add'),
-    path('products/<int:pk>', product_view, name='product_view'),
-    # path('to_do/delete/<int:pk>', delete_task, name='to_do_delete'),
-    # path('to_do/update/<int:pk>', update_view, name='to_do_update'),
+    path('products/<int:pk>', product_view, name='product_view')
 ]
