@@ -2,33 +2,34 @@
 {% block title %}Product add{% endblock %}
 
 {% block content %}
-<form action="{% url 'product_add' %}" method="post">
+<form class="width" action="{% url 'product_add' %}" method="post">
     {% csrf_token %}
     <h1 class="title">Add product</h1>
-    <div class="list-group">
-        <label for="title"></label>
-        <input type="text" name="title" id="title" placeholder="Title">
+    <div class="mb-3">
+        <label for="title" class="form-label"></label>
+        <input required type="text" class="form-control" name="title" id="title" placeholder="Title">
     </div>
-    <div class="list-group">
-        <label for="price"></label>
-        <input type="text" name="price" id="price" placeholder="Price">
+    <div class="mb-3">
+        <label for="price" class="form-label"></label>
+        <input required type="text" class="form-control" name="price" id="price" placeholder="Price">
     </div>
-    <div class="list-group">
-        <label for="image"></label>
-        <input type="text" name="image" id="image" placeholder="Image url">
+    <div class="mb-3">
+        <label for="image" class="form-label"></label>
+        <input required type="text" class="form-control" name="image" id="image" placeholder="Image url">
     </div>
-    <div>
-        <select name="category_id">
+    <div class="mb-3">
+        <select class="width" name="category_id">
+            <option disabled selected>Category</option>
             {% for category in categories %}
             <option value="{{ category.pk }}">{{ category }}</option>
             {% endfor %}
         </select>
     </div>
-    <div class="list-group">
-        <label for="description"></label>
-        <textarea name="description" id="description" cols="1" rows="5" placeholder="Description"></textarea>
+    <div class="mb-3">
+        <label required for="description" class="form-label"></label>
+        <textarea class="form-control" name="description" id="description" rows="3"
+            placeholder="Description"></textarea>
     </div>
     <button type="submit" class="btn btn-success">Add product</button>
 </form>
-
 {% endblock %}
