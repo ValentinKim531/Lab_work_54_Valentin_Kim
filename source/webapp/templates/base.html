@@ -28,6 +28,9 @@
                             <a class="nav-link" href="{% url 'products' %}">Products</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{% url 'categories' %}">Categories</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'product_add' %}">Add Product</a>
                         </li>
                         <li class="nav-item">
@@ -39,13 +42,34 @@
         </nav>
     </header>
 
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
+<div class="container content">
+    {% block content %}{% endblock %}
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-8 footer-block">
+                <h5 class="footer-title">Contact Us</h5>
+                <p class="footer-text">+ 7 775 959 66 71</p>
+            </div>
+            <div class="col-4 footer-block">
+                <h5 class="footer-title">Lorem, ipsum dolor.</h5>
+                <p class="footer-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro consequatur
+                    totam fuga.
+                    quod.</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="copyright-text">Copyright 2023</p>
+        </div>
+    </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

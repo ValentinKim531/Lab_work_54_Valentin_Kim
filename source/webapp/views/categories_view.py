@@ -8,9 +8,18 @@ def categories_view(request: WSGIRequest):
     context = {
         'categories': categories
     }
-    return render(request, 'categories.html', context=context)
+    return render(request, 'categories_view.html', context=context)
 
 def delete_category(request, pk):
-    to_do = get_object_or_404(Categories, pk=pk)
-    to_do.delete()
+    category = get_object_or_404(Categories, pk=pk)
+    category.delete()
+    return redirect('categories')
+
+def edit_category(request: WSGIRequest, pk):
+    category = get_object_or_404(Categories, pk=pk)
+    if request.method == "GET":
+        return render(request, 'category_edit_view.html', context={'category': category})
+    category.title = request.POST.get('title')
+    category.description = request.POST.get('description')
+    category.save()
     return redirect('categories')

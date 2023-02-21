@@ -14,10 +14,12 @@
             <li class="padding_bottom list-group-item d-flex justify-content-between align-items-start">
                 <div class="ms-2 me-auto">
                     <div class="fw-bold">{{ category.title }}</div>
-                    <div class="fw-bold">{{ category.description }}</div>
+                    <small class="fw-bold">{{ category.description }}</small>
                 </div>
-                <span class="badge bg-primary rounded-pill"><a href="{% url 'category_delete' category.pk %}"
-                            class="button-text-color">Delete</a></span>
+                <span class="button_padding"><a href="{% url 'category_edit' category.pk %}"
+                            class="btn btn-info">Edit</a></span>
+                <span class="button_padding"><a href="{% url 'category_delete' category.pk %}"
+                            class="btn btn-danger">Delete</a></span>
             </li>
         </ol>
     </div>
